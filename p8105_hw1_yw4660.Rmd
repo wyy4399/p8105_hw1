@@ -37,30 +37,19 @@ The scatterplot shows that temperatures generally increase through the first hal
 ```{r}
 size <- 10
 
-df_norm <- tibble(
-  value = rnorm(size)
-)
+df_norm <- tibble(value = rnorm(size))
 mean(pull(df_norm, value))
 as.numeric(pull(df_norm, value))
 
-df_logical <- tibble(
-  is_positive = pull(df_norm, value) > 0
-)
+df_logical <- tibble(is_positive = pull(df_norm, value) > 0)
 mean(pull(df_logical, is_positive))
 as.numeric(pull(df_logical, is_positive))
 
-df_char <- tibble(
-  letters10 = sample(letters, size, replace = TRUE)
-)
+df_char <- tibble(letters10 = sample(letters, size, replace = TRUE))
 mean(pull(df_char, letters10))
 as.numeric(pull(df_char, letters10))
 
-df_factor <- tibble(
-  difficulty = factor(
-    sample(c("easy", "medium", "hard"), size, replace = TRUE),
-    levels = c("easy", "medium", "hard")
-  )
-)
+df_factor <- tibble(difficulty = factor(sample(c("easy", "medium", "hard"), size, replace = TRUE),levels = c("easy", "medium", "hard")))
 mean(pull(df_factor, difficulty))
 as.numeric(pull(df_factor, difficulty))
 
