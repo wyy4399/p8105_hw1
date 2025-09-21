@@ -1,0 +1,42 @@
+---
+title: "p8105_hw1_yw4660"
+output: html_document
+---
+#### Problem 1
+```{r, echo=FALSE}
+# import necessary package
+# install.packages("moderndive")
+library("moderndive")
+library("tidyverse")
+data("early_january_weather") #load the data
+skimr::skim(early_january_weather) #view the data
+```
+<!--A short description using inline R code-->
+The dataset early_january_weather contains `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.  
+The mean temperature is `r mean(early_january_weather$temp, na.rm = TRUE)`.
+
+```{r, echo=FALSE}
+# scatterplot
+ggplot(early_january_weather,
+       aes(x = time_hour, y = temp, color = humid)) +
+  geom_point(alpha = 0.6) +
+  labs(
+    title = "Temperature vs. Time",
+    x = "Time",
+    y = "Temperature (°F)",
+    color = "Humidity"
+  ) 
+# save it
+ggsave("weather_scatterplot.png")
+```
+<!--A short description of plot-->
+The scatterplot shows that temperatures generally increase through the first half of January, rising from around the low 30 °F range to the mid-40s and occasionally near 50 °F. Daily readings vary several degrees, and points with lighter blue coloring—indicating higher humidity—tend to cluster during the warmer mid-month period, suggesting more humid air when it’s warmer.
+
+#### Problem 2
+
+```{r}
+
+
+
+```
+
